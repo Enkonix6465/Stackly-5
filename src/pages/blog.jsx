@@ -476,8 +476,8 @@ const Blog = () => {
 
   // CATEGORIES
   const Categories = () => (
-    <section className={`w-full mt-5 pb-5 ${theme === 'dark' ? 'bg-[#141B25] text-white' : 'bg-[#fdf9f4] text-black'}`}>
-      <div className="container mx-auto px-4 grid grid-row-1 md:grid-cols-2 md:gap-x-20 gap-y-12 items-center">
+    <section className={`w-full mt-5 pb-5 md:mt-16 md:pb-16 ${theme === 'dark' ? 'bg-[#141B25] text-white' : 'bg-[#fdf9f4] text-black'}`}>
+      <div className="container mx-auto px-4 md:px-8 grid grid-row-1 md:grid-cols-2 md:gap-x-20 gap-y-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -531,8 +531,8 @@ const Blog = () => {
           ...Array(6 - t.mythsAndFacts.length).fill({ myth: '', fact: '' })
         ];
     return (
-      <section className={`w-full px-0 py-1 ${theme === 'dark' ? 'bg-[#1E2A38] text-white' : 'bg-[#fff] text-black'}`}>
-        <div className="container mx-auto px-4">
+      <section className={`w-full px-0 py-1 md:py-12 ${theme === 'dark' ? 'bg-[#1E2A38] text-white' : 'bg-[#fff] text-black'}`}>
+        <div className="container mx-auto px-4 md:px-8">
           <motion.h2 
             className={`text-3xl mx-auto font-bold mb-8 mt-20 text-center ${theme === 'dark' ? 'text-blue-200' : 'text-blue-900'}`}
             initial={{ opacity: 0, y: 30 }}
