@@ -203,7 +203,7 @@ const InvestmentAdvisory = () => {
   return (
     <section className={theme === 'dark' ? 'w-full p-0 m-0 bg-[#1E2A38] text-white' : 'w-full p-0 m-0 bg-white text-black'} dir={isRTL ? 'rtl' : 'ltr'}>
       {/* 1. Hero + Brief Intro */}
-      <div className="relative w-full h-screen mb-0">
+      <div className="relative w-full h-[90vh] mb-0">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover object-center"
           src={investmentHeroVideo}
@@ -222,7 +222,7 @@ const InvestmentAdvisory = () => {
             {t.heroTitle}
           </motion.h1>
           <motion.p 
-            className="text-lg md:text-xl text-orange-400 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-white max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}

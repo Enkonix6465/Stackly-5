@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import welcomeImage from '../assets/welcome image.webp';
+import logo from '../assets/logo.png'; // Make sure your logo file exists at this path
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 // Translations for Welcome Page
@@ -298,13 +299,21 @@ const Welcome = () => {
       {/* Left Section - Welcome Information */}
       <div className="relative z-10 flex items-center justify-center px-4 py-8 md:px-8 md:py-0">
         <div className="text-white w-full max-w-md">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          {/* Logo at the top - only one logo, centered for both sections */}
+          <div className="flex flex-col items-center mb-0">
+            <img
+              src={logo}
+              alt="Logo"
+              style={{ width: 150, height: 150, objectFit: 'contain' }}
+            />
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
             {t.welcomeTitle}
           </h1>
-          <p className="text-lg text-gray-300 leading-relaxed mb-8">
+          <p className="text-lg text-gray-300 leading-relaxed mb-8 text-center">
             {t.welcomeDesc}
           </p>
-          <div className="flex gap-6 ">
+          <div className="flex gap-6 justify-center">
             {socialLinks.map((item, index) => (
               <a
                 key={index}
@@ -324,7 +333,8 @@ const Welcome = () => {
       {/* Right Section - Login/Register Form */}
       <div className="relative z-10 flex items-center justify-center px-4 py-8 md:px-8 md:py-0">
         <div className="w-full max-w-md bg-white/10 md:bg-transparent rounded-xl md:rounded-none p-4 md:p-0 shadow-none md:shadow-none">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+          {/* Logo removed from right section */}
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
             {showRegister ? t.registerTitle : t.loginTitle}
           </h2>
           <form onSubmit={handleSubmit} className="space-y-6">

@@ -15,7 +15,7 @@ import auditImg from '../assets/Audit & Compliance.jpg';
 const translations = {
   en: {
     heroTitle: "Expert Financial Services",
-    heroDesc: "Unlock growth, efficiency, and peace of mind with our tailored financial solutions for businesses of all sizes. From strategic consulting and hands-on analysis to ongoing support, our team empowers you to make smarter decisions, streamline operations, and stay ahead in a rapidly changing financial landscape. Experience the difference of expert guidance, transparent processes, and a partnership built for your long-term success.",
+    heroDesc: "Unlock growth, efficiency, and peace of mind with our tailored financial solutions for businesses of all sizes. From strategic consulting and hands-on analysis to ongoing support, our team empowers you to make smarter decisions, streamline operations.",
     servicesTitle: "Our Services",
     services: [
       {
@@ -281,9 +281,14 @@ const Service = () => {
   let sectionIndex = 0;
 
   return (
-    <section className={`w-full p-0 m-0 ${theme === 'dark' ? 'bg-[#1E2A38] text-white' : 'bg-[#FDF9F4] text-black'}`} dir={isRTL ? 'rtl' : 'ltr'}>
+    <section className={`w-full p-0 m-0 overflow-x-hidden ${theme === 'dark' ? 'bg-[#1E2A38] text-white' : 'bg-[#FDF9F4] text-black'}`} dir={isRTL ? 'rtl' : 'ltr'}>
       {/* 1. Hero + Brief Intro */}
-      <div className="relative w-full h-screen mb-0" data-aos="fade-in" data-aos-duration="1500">
+      <div
+        className="relative w-screen max-w-full h-[90vh] mb-0 overflow-hidden"
+        data-aos="fade-in"
+        data-aos-duration="1500"
+        style={{ left: '50%', right: '50%', marginLeft: '-50vw', marginRight: '-50vw' }}
+      >
         <video
           className="absolute top-0 left-0 w-full h-full object-cover object-center"
           src={servicevideo}
@@ -509,7 +514,9 @@ const Service = () => {
       <section 
         className="relative py-16 flex items-center justify-center overflow-hidden"
         style={{
-          backgroundColor: theme === 'dark' ? '#1E2A38' : '#fff'
+          background: theme === 'dark'
+            ? 'linear-gradient(135deg, #1E2A38 60%, #ea580c 100%)'
+            : 'linear-gradient(135deg, #FDF9F4 60%, #ea580c 100%)'
         }}
       >
         <div 

@@ -301,7 +301,7 @@ const Home2 = () => {
     <div dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Hero Section */}
       <section 
-        className={`relative h-screen flex items-center justify-center overflow-hidden ${theme === 'dark' ? 'bg-[#1E2A38] text-white' : 'bg-gray-900 text-white'}`}
+        className={`relative h-[90vh] flex items-center justify-center overflow-hidden ${theme === 'dark' ? 'bg-[#1E2A38] text-white' : 'bg-gray-900 text-white'}`}
         style={{ backgroundColor: bgColors[sectionIndex++ % 2] }}
         data-aos="fade-up"
       >

@@ -211,7 +211,7 @@ const AuditCompliance = () => {
   return (
     <section className={theme === 'dark' ? 'w-full p-0 m-0 bg-[#1E2A38] text-white' : 'w-full p-0 m-0 bg-white text-black'} dir={isRTL ? 'rtl' : 'ltr'}>
       {/* 1. Hero + Brief Intro */}
-      <div className="relative w-full h-screen mb-0">
+      <div className="relative w-full h-[90vh] mb-0">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover object-center"
           src={auditHeroVideo}
@@ -220,7 +220,9 @@ const AuditCompliance = () => {
           muted
           playsInline
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/60 to-transparent flex flex-col items-center justify-center text-center p-8">
+        {/* Overlay for better content visibility */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/60 to-transparent flex flex-col items-center justify-center text-center p-8 z-20">
           <motion.h1 
             className="text-4xl md:text-5xl font-extrabold text-white drop-shadow mb-4"
             initial={{ opacity: 0, y: 30 }}
@@ -230,7 +232,7 @@ const AuditCompliance = () => {
             {t.heroTitle}
           </motion.h1>
           <motion.p 
-            className="text-lg md:text-xl text-orange-400 max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-white max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}

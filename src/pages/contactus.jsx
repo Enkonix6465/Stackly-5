@@ -16,7 +16,7 @@ const translations = {
     mail: "stackly.in",
     phone: "+91 93905 94407",
     getInTouch: "GET IN TOUCH",
-    contactHeading: "Needs help? let's get in touch",
+    contactHeading: "Together, we make it happen",
     sendBtn: "Send Message",
     successMsg: "Form submitted successfully. Thank you!",
     locationTitle: "LOCATION",
@@ -192,7 +192,7 @@ const ContactUs = () => {
   const textAccent = 'text-orange-500';
 
   return (
-    <div className={`min-h-screen ${bgMain} transition-colors duration-300`} dir={isRTL ? 'rtl' : 'ltr'}>
+    <div className={`min-h-[90vh] ${bgMain} transition-colors duration-300`} dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Hero Section */}
       <section className={`relative mb-0 h-screen md:h-screen md:py-20 flex flex-col items-center justify-center min-h-[60vh] overflow-hidden`}>
         <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover z-0">
@@ -220,7 +220,8 @@ const ContactUs = () => {
       style={{ backgroundColor: theme === 'dark' ? '#141B25' : '#fdf9f4' }}>
         <div className="max-w-7xl mx-auto px-4">
           <motion.h2
-            className={`text-2xl md:text-3xl font-bold ${textAccent} mb-8 text-center`}
+            className={`font-bold ${textAccent} mb-8 text-center`}
+            style={{ fontSize: '48px', lineHeight: '1.1' }} // Force 48px for consistency
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -302,7 +303,7 @@ const ContactUs = () => {
               viewport={{ once: true }}
             >
               <motion.div
-                className="text-orange-500 font-semibold text-sm tracking-wider uppercase"
+                className="text-orange-500 font-bold text-4xl lg:text-5xl uppercase tracking-wider"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -336,13 +337,23 @@ const ContactUs = () => {
                   setContactSuccess(true);
                 }}
               >
+                {/* First Name */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                   viewport={{ once: true }}
                 >
+                  <label
+                    className={`block mb-2 font-semibold text-lg ${
+                      theme === 'dark' ? 'text-orange-500' : 'text-black'
+                    }`}
+                    htmlFor="firstName"
+                  >
+                    {t.formFields.firstName}
+                  </label>
                   <input
+                    id="firstName"
                     type="text"
                     placeholder={t.formFields.firstName}
                     className={`w-full px-4 py-4 border ${
@@ -352,13 +363,23 @@ const ContactUs = () => {
                     } rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200`}
                   />
                 </motion.div>
+                {/* Last Name */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                   viewport={{ once: true }}
                 >
+                  <label
+                    className={`block mb-2 font-semibold text-lg ${
+                      theme === 'dark' ? 'text-orange-500' : 'text-black'
+                    }`}
+                    htmlFor="lastName"
+                  >
+                    {t.formFields.lastName}
+                  </label>
                   <input
+                    id="lastName"
                     type="text"
                     placeholder={t.formFields.lastName}
                     className={`w-full px-4 py-4 border ${
@@ -368,13 +389,23 @@ const ContactUs = () => {
                     } rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200`}
                   />
                 </motion.div>
+                {/* Email */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
                   viewport={{ once: true }}
                 >
+                  <label
+                    className={`block mb-2 font-semibold text-lg ${
+                      theme === 'dark' ? 'text-orange-500' : 'text-black'
+                    }`}
+                    htmlFor="email"
+                  >
+                    {t.formFields.email}
+                  </label>
                   <input
+                    id="email"
                     type="email"
                     placeholder={t.formFields.email}
                     className={`w-full px-4 py-4 border ${
@@ -384,13 +415,23 @@ const ContactUs = () => {
                     } rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200`}
                   />
                 </motion.div>
+                {/* Phone */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
                   viewport={{ once: true }}
                 >
+                  <label
+                    className={`block mb-2 font-semibold text-lg ${
+                      theme === 'dark' ? 'text-orange-500' : 'text-black'
+                    }`}
+                    htmlFor="phone"
+                  >
+                    {t.formFields.phone}
+                  </label>
                   <input
+                    id="phone"
                     type="tel"
                     placeholder={t.formFields.phone}
                     className={`w-full px-4 py-4 border ${
@@ -400,13 +441,23 @@ const ContactUs = () => {
                     } rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200`}
                   />
                 </motion.div>
+                {/* Message */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.7 }}
                   viewport={{ once: true }}
                 >
+                  <label
+                    className={`block mb-2 font-semibold text-lg ${
+                      theme === 'dark' ? 'text-orange-500' : 'text-black'
+                    }`}
+                    htmlFor="message"
+                  >
+                    {t.formFields.message}
+                  </label>
                   <textarea
+                    id="message"
                     placeholder={t.formFields.message}
                     rows="6"
                     className={`w-full px-4 py-4 border ${
@@ -416,6 +467,7 @@ const ContactUs = () => {
                     } rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 resize-none`}
                   ></textarea>
                 </motion.div>
+                {/* Submit Button */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}

@@ -452,9 +452,18 @@ const Blog = () => {
       <h2 className="text-3xl font-bold text-orange-500 mb-8 text-center">{t.featuredTitle}</h2>
       <div className="grid md:grid-cols-3 mt-8 gap-8">
         {t.featuredArticles.map((art, i) => (
-          <motion.div key={art.id} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.2, duration: 0.6 }} className={`${theme === 'dark' ? 'bg-[#141B25] text-white' : 'bg-white text-black'} rounded-xl shadow-lg overflow-hidden flex flex-col`}>
+          <motion.div
+            key={art.id}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.2, duration: 0.6 }}
+            className={`${theme === 'dark' ? 'bg-[#141B25] text-white' : 'bg-white text-black'} rounded-xl shadow-lg overflow-hidden flex flex-col`}
+          >
             <img src={art.image} alt={art.title} className="h-48 w-full object-cover" />
-            <div className="p-6 flex-1 flex flex-col">
+            <div className="p-6 flex-1 flex flex-col
+              sm:items-start sm:text-left
+              items-center text-center
+            ">
               <h3 className={`font-bold text-lg mb-2 ${theme === 'dark' ? 'text-blue-200' : 'text-blue-900'}`}>{art.title}</h3>
               <p className={`mb-4 flex-1 ${theme === 'dark' ? 'text-blue-100' : 'text-gray-600'}`}>{art.summary}</p>
               <Link to={`/blog/${art.id}`} className="text-orange-500 font-semibold hover:underline mt-auto">{isRTL ? (language === 'ar' ? "اقرأ المزيد" : "קרא עוד") : "Read More →"}</Link>
@@ -476,7 +485,7 @@ const Blog = () => {
           viewport={{ once: true }}
         >
           <motion.h2 
-            className={`text-3xl font-bold mb-6 md:mb-8 text-left ${theme === 'dark' ? 'text-blue-200' : 'text-blue-900'}`}
+            className={`text-3xl font-bold mb-6 md:mb-8 text-center md:text-left text-center md:text-left ${theme === 'dark' ? 'text-blue-200' : 'text-blue-900'}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -485,7 +494,7 @@ const Blog = () => {
             {t.categoriesTitle}
           </motion.h2>
           <motion.p 
-            className={`text-lg max-w-md mb-4 md:mb-0 text-left ${theme === 'dark' ? 'text-blue-100' : 'text-gray-700'}`}
+            className={`text-lg max-w-md mb-4 md:mb-0 text-center md:text-left ${theme === 'dark' ? 'text-blue-100' : 'text-gray-700'}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -533,22 +542,25 @@ const Blog = () => {
           >
             {t.mythsTitle}
           </motion.h2>
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-x-9 gap-y-10 max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-x-9 gap-y-10 max-w-7xl mx-auto
+            [@media(max-width:640px)]:grid-cols-1
+          ">
             {mythsFactsGrid.map((item, i) => (
               <motion.div 
                 key={i} 
-                className="flex flex-col pb-6 md:pb-0 md:pr-8 h-full min-h-[120px]"
+                className="flex flex-col pb-6 md:pb-0 md:pr-8 h-full min-h-[120px]
+                  [@media(max-width:640px)]:items-center [@media(max-width:640px)]:text-center"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ scale: 1.02, x: 5 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-start gap-2">
+                <div className="flex items-start gap-2 [@media(max-width:640px)]:justify-center">
                   <span className="font-bold text-orange-500 min-w-[50px]">{isRTL ? (language === 'ar' ? "الخرافة:" : "מיתוס:") : "Myth:"}</span>
                   <span className={theme === 'dark' ? 'text-white' : 'text-gray-800'}>{item.myth}</span>
                 </div>
-                <div className="flex items-start gap-2 mt-2">
+                <div className="flex items-start gap-2 mt-2 [@media(max-width:640px)]:justify-center">
                   <span className={`font-bold min-w-[50px] ${theme === 'dark' ? 'text-blue-200' : 'text-blue-900'}`}>{isRTL ? (language === 'ar' ? "الحقيقة:" : "עובדה:") : "Fact:"}</span>
                   <span className={theme === 'dark' ? 'text-blue-100' : 'text-gray-700'}>{item.fact}</span>
                 </div>

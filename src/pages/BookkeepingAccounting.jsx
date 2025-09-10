@@ -212,7 +212,9 @@ const BookkeepingAccounting = () => {
           muted
           playsInline
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/60 to-transparent flex flex-col items-center justify-center text-center p-8">
+        {/* Overlay for better content visibility */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/60 to-transparent flex flex-col items-center justify-center text-center p-8 z-20">
           <motion.h1 
             className="text-4xl md:text-5xl font-extrabold text-white drop-shadow mb-4"
             initial={{ opacity: 0, y: 30 }}
@@ -222,7 +224,7 @@ const BookkeepingAccounting = () => {
             {t.heroTitle}
           </motion.h1>
           <motion.p
-            className={`text-xl md:text-2xl max-w-3xl mx-auto text-orange-500`}
+            className="text-lg md:text-xl text-white max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

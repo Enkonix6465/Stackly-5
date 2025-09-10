@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
@@ -59,33 +58,35 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Welcome />} />
-        <Route path="/admindashboard" element={<AdminDashboard />} />
-        <Route
-          path="/*"
-          element={
-            <Layout>
-              <Routes>
-                <Route path="home1" element={<Home1 />} />
-                <Route path="home2" element={<Home2 />} />
-                <Route path="aboutus" element={<AboutUs />} />
-                <Route path="contactus" element={<ContactUs />} />
-                <Route path="service" element={<Service />} />
-                <Route path="financial-planning-analysis" element={<FinancialPlanningAnalysis />} />
-                <Route path="tax-preparation-filing" element={<TaxPreparationFiling />} />
-                <Route path="budget-management" element={<BudgetManagement />} />
-                <Route path="investment-advisory" element={<InvestmentAdvisory />} />
-                <Route path="audit-compliance" element={<AuditCompliance />} />
-                <Route path="bookkeeping-accounting" element={<BookkeepingAccounting />} />
-                <Route path="blog" element={<Blog />} />
-                <Route path="blog/:id" element={<BlogDetail />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Layout>
-          }
-        />
-      </Routes>
+      <div className="overflow-x-hidden">
+        <Routes>
+          <Route path="/" element={<Welcome />} />
+          <Route path="/admindashboard" element={<AdminDashboard />} />
+          <Route
+            path="/*"
+            element={
+              <Layout>
+                <Routes>
+                  <Route path="home1" element={<Home1 />} />
+                  <Route path="home2" element={<Home2 />} />
+                  <Route path="aboutus" element={<AboutUs />} />
+                  <Route path="contactus" element={<ContactUs />} />
+                  <Route path="service" element={<Service />} />
+                  <Route path="financial-planning-analysis" element={<FinancialPlanningAnalysis />} />
+                  <Route path="tax-preparation-filing" element={<TaxPreparationFiling />} />
+                  <Route path="budget-management" element={<BudgetManagement />} />
+                  <Route path="investment-advisory" element={<InvestmentAdvisory />} />
+                  <Route path="audit-compliance" element={<AuditCompliance />} />
+                  <Route path="bookkeeping-accounting" element={<BookkeepingAccounting />} />
+                  <Route path="blog" element={<Blog />} />
+                  <Route path="blog/:id" element={<BlogDetail />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Layout>
+            }
+          />
+        </Routes>
+      </div>
     </Router>
   );
 }

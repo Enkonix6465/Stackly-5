@@ -396,7 +396,7 @@ const ClientReviews = ({ theme, t }) => {
                 </div>
               </div>
               <div>
-                <div className="font-semibold text-white">{review.name}</div>
+                <div className="font-semibold" style={{ color: '#000' }}>{review.name}</div>
                 <div className={`${secondaryText} text-sm`}>{review.role}</div>
               </div>
             </div>
@@ -419,7 +419,7 @@ const ClientReviews = ({ theme, t }) => {
                 </div>
               </div>
               <div>
-                <div className="font-semibold text-white">{review.name}</div>
+                <div className="font-semibold" style={{ color: '#000' }}>{review.name}</div>
                 <div className={`${secondaryText} text-sm`}>{review.role}</div>
               </div>
             </div>
@@ -467,16 +467,20 @@ const Home1 = () => {
   const sectionWhite = theme === 'dark' ? 'bg-[#1E2A38] text-white' : 'bg-white text-black';
 
   return (
-    <div className={theme === 'dark' ? 'bg-[#141B25] text-white' : 'bg-[#FDF9F4] text-black'} dir={isRTL ? 'rtl' : 'ltr'}>
-      {/* Hero section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden" data-aos="fade-in" data-aos-duration="1500">
+    <div
+      className={theme === 'dark' ? 'bg-[#141B25] text-white' : 'bg-[#FDF9F4] text-black'}
+      dir={isRTL ? 'rtl' : 'ltr'}
+      style={{ overflowX: 'hidden' }}
+    >
+      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden w-full sm:w-screen">
+        {/* Hero section */}
         <video autoPlay muted loop className="absolute inset-0 w-full h-full object-cover z-0">
           <source src={home1hero} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
-        <div className="relative z-20 text-center text-white max-w-5xl mx-auto px-4">
+        <div className="relative z-20 text-center text-white max-w-5xl mx-auto px-2 sm:px-4">
           <motion.h1 
-            className="text-4xl md:text-6xl font-bold mb-6 whitespace-nowrap"
+            className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 whitespace-normal"
             data-aos="fade-up" data-aos-delay="300"
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -484,7 +488,7 @@ const Home1 = () => {
             {t.heroTitle}
           </motion.h1>
           <motion.p 
-            className="text-lg md:text-xl mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed"
+            className="text-base xs:text-lg sm:text-xl mb-6 sm:mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed"
             data-aos="fade-up" data-aos-delay="500"
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
@@ -493,7 +497,7 @@ const Home1 = () => {
           </motion.p>
           <motion.button 
             onClick={() => window.location.href = '#get-started'}
-            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-10 rounded-lg text-lg transition-colors duration-200 shadow-lg"
+            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 sm:py-4 sm:px-10 rounded-lg text-base sm:text-lg transition-colors duration-200 shadow-lg"
             data-aos="fade-up" data-aos-delay="700"
             whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
           >
@@ -506,9 +510,9 @@ const Home1 = () => {
       <div id="get-started"></div>
 
       {/* Why Choose Us Section */}
-      <section className={sectionWhite + " py-16"} data-aos="fade-up" data-aos-duration="1200" id="why-choose-us">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className={sectionWhite + " py-10 sm:py-16"} data-aos="fade-up" data-aos-duration="1200" id="why-choose-us">
+        <div className="max-w-6xl mx-auto px-2 sm:px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             {/* Image */}
             <motion.div 
               className={isRTL ? "order-1 lg:order-2" : "order-2 lg:order-1"}
@@ -522,20 +526,18 @@ const Home1 = () => {
                 className="w-full h-auto rounded-lg shadow-lg object-cover"
               />
             </motion.div>
-
             {/* Text Content */}
             <div className={isRTL ? "order-2 lg:order-1" : "order-1 lg:order-2"} data-aos={isRTL ? "slide-left" : "slide-right"} data-aos-delay="400">
               <motion.h2 
-                className="text-3xl font-bold mb-6" 
+                className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6" 
                 data-aos="fade-up" data-aos-delay="600"
                 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 {t.whyTitle}
               </motion.h2>
-
               <motion.p 
-                className="text-lg mb-8 text-justify leading-relaxed opacity-90"
+                className="text-base sm:text-lg mb-6 sm:mb-8 text-justify leading-relaxed opacity-90"
                 style={{ color: theme === 'dark' ? '#ddd' : '#4B5563' }}
                 data-aos="fade-up" data-aos-delay="500"
                 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
@@ -543,8 +545,7 @@ const Home1 = () => {
               >
                 {t.whyDesc}
               </motion.p>
-
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {t.whyPoints.map((text, i) => (
                   <motion.div 
                     key={i}
@@ -563,60 +564,58 @@ const Home1 = () => {
           </div>
         </div>
       </section>
-
       {/* Impact Metrics */}
       <ImpactMetrics theme={theme} t={t} />
-
       {/* Our Services Section */}
-      <section className={sectionWhite + " py-16"} data-aos="fade-up" data-aos-duration="1200">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.servicesTitle}</h2>
-            <p className="text-lg max-w-2xl mx-auto" style={{ color: theme === 'dark' ? '#ccc' : '#4B5563' }}>
+      <section className={sectionWhite + " py-10 sm:py-16"} data-aos="fade-up" data-aos-duration="1200">
+        <div className="max-w-6xl mx-auto px-2 sm:px-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">{t.servicesTitle}</h2>
+            <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: theme === 'dark' ? '#ccc' : '#4B5563' }}>
               {t.servicesDesc}
             </p>
           </div>
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {t.serviceCards.map(({img, alt, title, desc}, idx) => (
-              <div key={idx} className={`relative rounded-xl shadow-lg p-8 flex flex-col items-center text-center overflow-hidden transition-shadow duration-300 hover:shadow-2xl group`}
+              <div key={idx} className={`relative rounded-xl shadow-lg p-6 sm:p-8 flex flex-col items-center text-center overflow-hidden transition-shadow duration-300 hover:shadow-2xl group`}
                 style={{backgroundColor: theme==='dark' ? '#1E2A38' : 'white', color: theme==='dark' ? 'white' : 'black'}}>
                 <div className="absolute left-0 bottom-0 w-full h-0 group-hover:h-full bg-[#1E2A38] to-transparent transition-all duration-500 z-0"></div>
                 <div className="relative z-10 flex flex-col items-center">
-                  <img src={img} alt={alt} className="w-20 h-20 object-contain mb-4" />
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-white transition-colors duration-300">{title}</h3>
-                  <p className="mb-4 group-hover:text-white text-black transition-colors duration-300" style={{color: theme==='dark' ? '#ccc' : '#ccc'}}>{desc}</p>
+                  <img src={img} alt={alt} className="w-16 h-16 sm:w-20 sm:h-20 object-contain mb-3 sm:mb-4" />
+                  <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2 group-hover:text-white transition-colors duration-300">{title}</h3>
+                  <p className="mb-2 sm:mb-4 group-hover:text-white text-black transition-colors duration-300" style={{color: theme==='dark' ? '#ccc' : '#ccc'}}>{desc}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-
       {/* Client Reviews */}
       <ClientReviews theme={theme} t={t} />
-
       {/* CTA Section */}
       <section 
-        className="relative py-16 flex items-center justify-center overflow-hidden"
+        className="relative py-10 sm:py-16 flex items-center justify-center overflow-hidden"
         style={{
-          backgroundColor: theme === 'dark' ? '#1E2A38' : '#fff'
+          background: theme === 'dark'
+            ? 'linear-gradient(135deg, #1E2A38 60%, #ea580c 100%)'
+            : 'linear-gradient(135deg, #FDF9F4 60%, #ea580c 100%)'
         }}
       >
         <div 
-          className="relative z-10 max-w-3xl mx-auto text-center px-6"
+          className="relative z-10 max-w-3xl mx-auto text-center px-3 sm:px-6"
           data-aos="zoom-in-up"
           data-aos-duration="500"
           data-aos-once="false"
         >
-          <h2 className={`text-3xl md:text-4xl font-bold mb-4`} style={{color: theme === 'dark' ? 'white' : '#1F2937'}}>
+          <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4`} style={{color: theme === 'dark' ? 'white' : '#1F2937'}}>
             {t.ctaTitle}
           </h2>
-          <p className="text-lg mb-8" style={{color: theme === 'dark' ? '#fff' : '#000'}}>
+          <p className="text-base sm:text-lg mb-6 sm:mb-8" style={{color: theme === 'dark' ? '#fff' : '#000'}}>
             {t.ctaDesc}
           </p>
           <Link 
             to="/contactus" 
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-10 rounded-lg text-lg shadow-lg transition-all duration-200 transform hover:scale-105"
+            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 sm:py-4 sm:px-10 rounded-lg text-base sm:text-lg shadow-lg transition-all duration-200 transform hover:scale-105"
           >
             {t.ctaBtn}
           </Link>

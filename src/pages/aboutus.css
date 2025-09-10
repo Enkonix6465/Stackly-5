@@ -692,6 +692,149 @@ body.dark .team-section h2 {
   }
 }
 
+@media (max-width: 640px) {
+  .about-us-container {
+    padding: 0 !important;
+    font-size: 1rem;
+  }
+
+  .hero-section {
+    height: 60vh !important;
+    min-height: 340px;
+  }
+  .aboutus-hero-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.75rem;
+    padding: 0 0.5rem;
+  }
+  .aboutus-hero-subtitle {
+    font-size: 1rem !important;
+    padding: 0 0.5rem;
+  }
+  .hero-content {
+    padding: 1.5rem 0.5rem 0.5rem 0.5rem !important;
+  }
+
+  .timeline-section {
+    padding: 2rem 0 !important;
+  }
+  .timeline {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    padding: 0 0.5rem;
+  }
+  .timeline-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 1rem 0.5rem !important;
+    border-left: 3px solid #ff8800;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  .timeline-year {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.25rem;
+  }
+  .timeline-content h3 {
+    font-size: 1rem !important;
+  }
+  .timeline-content p {
+    font-size: 0.95rem !important;
+  }
+
+  .mission-vision-flex {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1.5rem !important;
+    padding: 0 0.5rem;
+  }
+  .mv-card {
+    width: 100% !important;
+    min-width: unset !important;
+    margin: 0 auto 1rem auto !important;
+    padding: 1rem !important;
+  }
+  .mv-image-center {
+    margin: 0 auto 1rem auto !important;
+    width: 100% !important;
+    max-width: 220px !important;
+  }
+  .mv-center-img {
+    width: 100% !important;
+    max-width: 220px !important;
+    height: auto !important;
+  }
+  .mv-title {
+    font-size: 1.1rem !important;
+  }
+  .mv-desc {
+    font-size: 0.98rem !important;
+  }
+
+  .awards-flex {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    padding: 0 0.5rem;
+  }
+  .awards-left, .awards-right {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .awards-img {
+    width: 100% !important;
+    max-width: 220px !important;
+    margin: 0 auto !important;
+  }
+  .awards-list {
+    font-size: 0.98rem !important;
+    padding-left: 1rem !important;
+  }
+
+  .team-section {
+    padding: 2rem 0 !important;
+  }
+  .team-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 0 0.5rem;
+  }
+  .team-member {
+    padding: 1rem !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+  }
+  .team-photo {
+    width: 90px !important;
+    height: 90px !important;
+  }
+  .team-title {
+    font-size: 1rem !important;
+  }
+  .team-bio {
+    font-size: 0.95rem !important;
+  }
+
+  .csr-section {
+    padding-bottom: 2rem !important;
+  }
+  .csr-heading {
+    font-size: 1.3rem !important;
+    padding-top: 1.5rem !important;
+  }
+  .csr-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+    padding: 0 0.5rem;
+  }
+  .csr-item {
+    padding: 1rem !important;
+    font-size: 0.98rem !important;
+  }
+  .csr-stats span {
+    font-size: 1.1rem !important;
+  }
+}
+
 @media (max-width: 480px) {
   .container {
     padding: 0 15px;
@@ -723,5 +866,22 @@ body.dark .team-section h2 {
   
   .award-item, .csr-item {
     padding: 20px;
+  }
+}
+
+/* Center timeline content on mobile */
+@media (max-width: 640px) {
+  .timeline-content {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .timeline-content h3,
+  .timeline-content p {
+    text-align: center !important;
   }
 }

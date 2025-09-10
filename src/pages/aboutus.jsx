@@ -11,7 +11,6 @@ import exp5 from '../assets/exp5.jpg';
 import exp6 from '../assets/exp6.jpg';
 import mission from '../assets/mission.webp';
 import aboutlast from '../assets/aboutlast.jpg';
-
 // Translations for AboutUs
 const translations = {
   en: {
@@ -337,7 +336,7 @@ const AboutUs = () => {
     <div className={`about-us-container ${theme === 'dark' ? 'bg-[#1E2A38] text-white' : 'bg-[#FDF9F4] text-black'}`} dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Hero Section */}
       <section 
-        className={`hero-section h-screen ${theme === 'dark' ? 'text-white' : 'text-black'}`}
+        className={`hero-section h-[90vh] ${theme === 'dark' ? 'text-white' : 'text-black'}`}
         style={{position: 'relative', overflow: 'hidden', backgroundColor: bgColors[sectionIndex++ % 2]}}
         data-aos="fade-in" data-aos-duration="1500"
       >
@@ -489,7 +488,7 @@ const AboutUs = () => {
       {/* CSR / Community Impact */}
       <section 
         className={`csr-section ${theme === 'dark' ? 'text-white' : 'text-black'}`}
-        style={{ backgroundColor: bgColors[sectionIndex++ % 2] }}
+        style={{ backgroundColor: bgColors[sectionIndex++ % 2], paddingBottom: '4rem' }} // Added paddingBottom here
         data-aos="fade-up" data-aos-duration="1200"
       >
         <div className="container">

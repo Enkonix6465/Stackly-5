@@ -242,9 +242,11 @@ const Footer = () => {
             </div>
             <Link 
               to="/contactus" 
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 mt-4 whitespace-nowrap text-center block"
+              className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3.5 px-5 rounded-lg transition-colors text-[8px] duration-200 mt-4 whitespace-nowrap text-center block
+                sm:w-auto sm:inline-block sm:mx-auto
+                "
             >
-              {t.cta}
+              <span className="block sm:inline">{t.cta}</span>
             </Link>
           </div>
         </div>
@@ -274,4 +276,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;                    
+export default Footer;
